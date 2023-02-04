@@ -1,4 +1,5 @@
 {
+    <uses-permission android
     "name": "portfolio_app",
     "short_name": "portfolio_app",
     "start_url": ".",

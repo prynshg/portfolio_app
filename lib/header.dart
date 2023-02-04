@@ -1,29 +1,29 @@
 import 'dart:math';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:velocity_x/velocity_x.dart';
 import 'colors.dart';
+import 'routes.dart';
 
 class HeaderScreen extends StatelessWidget {
   const HeaderScreen({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     var nameWidget= "Priyansh\nGarg.".
-    text.white.xl5.
-    lineHeight(1).size(context.isMobile?10:20).bold.make();
+    text.black.xl5.
+    lineHeight(1).size(context.isMobile?10:10).bold.make();
     return SafeArea(
       child: VxBox(
         child: VStack([
+          Buttons(),
           ZStack([
             PictureWidget(),
             Row(
               children: [
                 VStack([
-                  if(context.isMobile) 100.heightBox else 20.heightBox,
+                  if(context.isMobile) 100.heightBox else 50.heightBox,
                   CustomAppBar().shimmer(
                     primaryColor: Coolers.accentColor,
                   ),
@@ -34,7 +34,7 @@ class HeaderScreen extends StatelessWidget {
                       .shimmer(primaryColor: Coolers.accentColor),
                   30.heightBox,
                   SocialAccounts()
-                ]).pSymmetric(h:context.percentWidth*10,v:32
+                ]).pSymmetric(h:context.percentWidth*10,v:5
       ),
       Expanded(
         child: VxResponsive(
@@ -53,7 +53,7 @@ class HeaderScreen extends StatelessWidget {
     )
     ]))
         .size(context.screenWidth, context.percentHeight * 60)
-        .color(Coolers.secondaryColor)
+        .color(Vx.gray200)
         .make(),
     );
   }
@@ -65,7 +65,7 @@ class IntroductionWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return VStack([
-    "Introduction".text.gray400.widest.sm.make(),
+    "INTRODUCTION".text.xl3.white.bold.underline.widest.sm.make(),
     10.heightBox,
     "A Java Coder, ML Enthusiast and an APP Developer".text
         .white.xl3.maxLines(5).make()
@@ -86,8 +86,9 @@ class PictureWidget extends StatelessWidget {
       alignment: Alignment.center,
       transform: Matrix4.rotationY(pi),
       child: Image.asset("assets/self.png",
-      fit:BoxFit.cover,
-      height: context.percentHeight*60,
+      fit:BoxFit.fill,
+      height: context.percentHeight*53.7,
+
       ),
     );
   }
@@ -112,24 +113,52 @@ class SocialAccounts extends StatelessWidget {
     return [
       Icon(
         AntDesign.instagram,
-        color: Colors.white,
+        color: Colors.black,
       ).mdClick(() {
         launch("https://www.instagram.com/prynshg/");
       }).make(),
       20.widthBox,
       Icon(
         AntDesign.linkedin_square,
-        color: Colors.white,
+        color: Colors.black,
       ).mdClick(() {
         launch("https://www.linkedin.com/in/prynshg/");
       }).make(),
       20.widthBox,
       Icon(
         AntDesign.github,
-        color: Colors.white,
+        color: Colors.black,
       ).mdClick(() {
         launch("https://github.com/prynshg");
       }).make()
     ].hStack();
   }
 }
+
+class Buttons extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children:[
+          TextButton(
+              onPressed: () => Navigator.pushNamed(context, MyRoutes.ProjectsRoute),
+            child: 'Projects'.text.bold.xl.make(),
+            style: ButtonStyle(
+              backgroundColor: MaterialStateProperty.all<Color>(Vx.gray200),
+              foregroundColor: MaterialStateProperty.all<Color>(Vx.black),
+            ),
+          ),
+          TextButton(
+              onPressed: () => Navigator.pushNamed(context, MyRoutes.ContactRoute),
+            child: 'Contact'.text.bold.xl.make(),
+            style: ButtonStyle(
+              backgroundColor: MaterialStateProperty.all<Color>(Vx.gray200),
+              foregroundColor: MaterialStateProperty.all<Color>(Vx.black),
+            ),
+          ),
+        ],
+    );
+  }
+}
+
