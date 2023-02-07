@@ -2,8 +2,10 @@
 
 A portfolio app made using flutter (Dart) and node.js to host the web app version.
 Clone the repo and run the app to see its full features.
-![WhatsApp Image 2023-01-28 at 10 39 37 PM](https://user-images.githubusercontent.com/90180167/215279609-ef520e34-74fd-41ef-9d62-49238a0c051d.jpeg)
-![WhatsApp Image 2023-01-28 at 10 39 38 PM](https://user-images.githubusercontent.com/90180167/215279612-b34070e0-3886-4c86-b7ca-0c7f5031d6c9.jpeg)
+
+![WhatsApp Image 2023-02-05 at 00 43 29](https://user-images.githubusercontent.com/90180167/217283930-d4203623-086e-406e-b9fb-3ebdb3882054.jpg)
+![WhatsApp Image 2023-02-05 at 00 43 30](https://user-images.githubusercontent.com/90180167/217283962-d729a1b0-e0c5-46bf-9216-bbd57f3a98d9.jpg)
+![WhatsApp Image 2023-02-05 at 00 43 30](https://user-images.githubusercontent.com/90180167/217283984-ca6ae142-0e71-443a-a935-59317029a772.jpg)
 
 
 
